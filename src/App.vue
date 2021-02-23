@@ -1,16 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="test">
+    <h1>Hola {{ name }}</h1>
+    <a v-bind:href="linkUrl"> link</a>
+    <a v-bind:[attrKey]="attrKey"> link</a>
+    <div class="message" v-if="msgVisibility">Message</div>
+    <div class="message" v-else>AnotherMessage</div>
+    <div v-show="msgVisibility">BLOCK</div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld,
-  },
+  name: "App",
+  components: {},
+  data: () => ({
+    name: "Test",
+    linkUrl: "https://google.com",
+    attrKey: "href",
+    msgVisibility: false,
+  }),
 };
 </script>
 
